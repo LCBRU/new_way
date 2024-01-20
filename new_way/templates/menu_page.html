@@ -1,0 +1,31 @@
+{% extends "page.html" %}
+{% import "errors.html" as errors %}
+
+{% block page_content %}
+  <nav class="full-width">
+    <ul>
+      <li>
+        <a href="{{url_for('ui.index')}}">Home</a>
+      </li>
+      <li>
+        <a href="{{url_for('ui.index')}}">Home 2</a>
+        <ul>
+          <li><a href="{{url_for('ui.index')}}">Makes so much sense</a></li>
+          <li><a href="{{url_for('ui.index')}}">I can point to it</a></li>
+          <li><a href="{{url_for('ui.index')}}">It's my father's farm that I have lived on since I was a very small boy</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="{{url_for('ui.index')}}">Home 3</a>
+        <ul>
+          <li><a href="{{url_for('ui.index')}}">Makes so much sense</a></li>
+          <li><a href="{{url_for('ui.index')}}">I can point to it</a></li>
+          <li><a href="{{url_for('ui.index')}}">It's my father's farm that I have lived on since I was a very small boy</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  {% block menu_page_content %}{% endblock %}
+{% endblock %}
+

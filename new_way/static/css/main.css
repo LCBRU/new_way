@@ -1,0 +1,197 @@
+:root{
+    --body-font-family:Lato;
+    --body-font-weight:400;
+    --body-font-weight-bold:700;
+    --body-line-height: 1.625;
+    --body-font-style: normal;
+    --body-font-size: 1.125rem;
+
+    --footer-font-size: 1rem;
+
+    --color-black:#111111;
+    --color-white:#ffffff;
+    --color-alt:#f8f8f8;
+    --color-primary:#193e72;
+    --color-primary-light:#205092;
+    --color-primary-dark:#102747;
+    --color-custom-1:#f0f1f5;
+    --color-custom-2:#ea5c4e;
+    --color-custom-3:#474f6b;
+
+    --color-body:var(--color-primary);
+    --color-heading:var(--color-primary);
+    --color-link:var(--color-primary);
+    --color-link-light:var(--color-primary-light);
+    --color-link-dark:var(--color-primary-dark);
+    --color-background:#var(--color-white);
+
+    --border-radius: 5px;
+}
+
+/* Reset Start*/
+
+    * {
+        margin: 0;
+        padding: 0;
+        font: inherit;
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
+        max-width: var(--viewport-width);
+        font-size: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale
+    }
+
+    html {
+        hanging-punctuation: first last;
+    }
+
+    body {
+        min-height: 100svh;
+    }
+
+    img,
+    picture,
+    svg,
+    video {
+        display: block;
+        max-width: 100%;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        text-wrap: balance;
+    }
+
+/* Reset End */
+
+/* Layout Start */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+}
+
+main {
+    flex: 1;
+}
+
+.content-grid, .full-width {
+    --_padding-inline: 2rem;
+    --_content-max-width: 1000px;
+
+    display: grid;
+    grid-template-columns:
+        [full-width-start] minmax(var(--_padding-inline), 1fr)
+        [content-start] min(100% - (var(--_padding-inline) * 2), var(--_content-max-width)) [content-end]
+        minmax(var(--_padding-inline), 1fr) [full-width-start];
+}
+
+.content-grid > *,
+.full-width > * {
+    grid-column: content;
+}
+
+.content-grid > .full-width {
+    grid-column: full-width;
+}
+
+/* Layout End */
+
+body {
+    color: var(--color-body);
+    font-weight: var(--body-font-weight);
+    font-size: var(--body-font-size);
+    font-family: var(--body-font-family);
+    font-style: var(--body-font-style);
+    line-height: var(--body-line-height);
+}
+
+/* Header Starter */
+
+body > header > a > h1 {
+    height: 120px;
+    line-height: 120px;
+    text-align: right;
+    vertical-align: middle;
+    font-size: 2rem;
+    font-weight: bold;
+    background-image: url(../img/nihr-lbrc-cropped.png);
+    background-size: 270px auto;
+    background-repeat: no-repeat;
+    background-position: center left;    
+}
+
+/* Header End */
+
+/* Footer Start */
+
+footer {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: 1rem;
+    font-weight: 700;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Footer End */
+
+/* Menu Start */
+
+nav {
+    background-color: var(--color-custom-1);
+}
+
+nav > ul {
+    display: flex;
+    gap: 1em;
+}
+
+nav > ul > li:has(ul) > a:after {
+    display:inline-block;
+    padding-left: 0.5rem;
+    font-family: 'Font Awesome 5 Free';
+    content: "\f078";
+    font-size: 0.5em;
+}
+
+nav > ul ul {
+    display: none;
+    position: absolute;
+    background-color: var(--color-white);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+    max-width: 300px;
+    opacity: 0;
+    transition: opacity 2s;
+    border-radius: var(--border-radius);
+}
+
+nav > ul > li:hover ul {
+    display: block;
+    opacity: 1;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav a {
+    padding: 1rem;
+    display: inline-block;
+    font-weight: 700;
+}
+
+nav {
+    margin-bottom: 4rem;
+}
+
+/* Menu End */
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
+main {
+    padding-bottom: 4rem;
+}

@@ -1,0 +1,14 @@
+requests
+-e git+https://github.com/LCBRU/lbrc_flask.git@main#egg=lbrc_flask
+Flask
+python-dotenv
+sqlalchemy
+pymysql
+celery
+celery[redis]
+weasyprint==52.5
+Flask-WeasyPrint
+alembic
+flask-security-too[fsqla,common]
+cachetools
+
