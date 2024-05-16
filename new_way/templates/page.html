@@ -15,20 +15,18 @@
 {% endblock %}
 
 {% block base_content %}
-    <header class="content-grid">
-        <a href="{{url_for('ui.index')}}">
+    <header>
+        <a class="container" href="{{url_for('ui.index')}}">
           <h1>{{ application_title }}</h1>
         </a>
     </header>
   
     <main>
-      <div class="content-grid">
         {% block page_content %}{% endblock %}
-      </div>
     </main>
   
-    <footer class="content-grid">
-      <div>Copyright &copy; {{ current_year }} {{ organisation_name }}</div>
+    <footer>
+      <div class="container">Copyright &copy; {{ current_year }} {{ organisation_name }}</div>
     </footer>
   </div>
 {% endblock %}
