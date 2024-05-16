@@ -177,7 +177,7 @@ nav li {
 }
 
 nav a {
-    padding: 1rem;
+    padding: var(--body-paragraph-spacing);
     display: inline-block;
     font-weight: var(--bold-font-weight);
 }
